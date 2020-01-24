@@ -1,8 +1,8 @@
 import time
 
 import numpy as np
-import pyautogui
 import pyscreenshot as sc
+from pynput.mouse import Button as MButton, Controller as MController
 
 
 class Bot:
@@ -10,6 +10,7 @@ class Bot:
         self.SCREEN = (1500, 1000, 1760, 1100)  # Место экрана которое будет обрабатываться
         self.CHEST = (1617, 1048)  # Место где находится сундук
         self.COLOR_FOR_FIND = np.array([0, 230, 203])  # цвет который будет искаться на месте обработки
+        self.MOUSE_CONTROLLER = MController()
 
     def bot_execute(self):
         counter = 0
@@ -23,7 +24,15 @@ class Bot:
         # если в обрабатываемой области достаточно искомых пикселей, перемещаем курсор в нужное места экрана
         # и производим клин
         if counter > 1000:
-            mouse_position = pyautogui.position()
-            pyautogui.click(*self.CHEST)
+            mouse_position = self.MOUSE_CONTROLLER.position
+            self.MOUSE_CONTROLLER.position = self.CHEST
+            self.MOUSE_CONTROLLER.click(MButton.left, 1)
             time.sleep(0.1)
-            pyautogui.moveTo(*mouse_position)
+            self.MOUSE_CONTROLLER.position = mouse_position
+
+
+bot = Bot()
+
+while True:
+    time.sleep(60)
+    bot.bot_execute()
