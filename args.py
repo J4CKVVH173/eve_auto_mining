@@ -33,4 +33,11 @@ parser.add_argument(
     help='Искомый цвет на обрабатываемом участке экрана. Передавать в формате RGB через пробел'
 )
 
+parser.add_argument(
+    '--timer',
+    default=0,
+    type=int,
+    help='Время, на которое будет запущен бот'
+)
+
 namespace = parser.parse_args()
