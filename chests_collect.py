@@ -30,9 +30,31 @@ class Bot:
             time.sleep(0.1)
             self.MOUSE_CONTROLLER.position = mouse_position
 
+    def debug(self):
+        """
+        Метод вызываемый для отладки.
 
-bot = Bot()
+        Производит отображения области экрана которая будет обрабатываться, место куда будет установлен курсор
+        и количество пикселей того или иного цвета.
+        """
+        time.sleep(1)
+        im = sc.grab(bbox=self.SCREEN)
+        im.show()
 
-while True:
-    time.sleep(60)
-    bot.bot_execute()
+        array = np.array(im)
+        unique = dict()
+        for i in range(array.shape[0]):
+            for j in range(array.shape[1]):
+                key = f"{array[i][j][0]},{array[i][j][1]},{array[i][j][2]}"
+                if unique.get(key, None):
+                    unique[key] += 1
+                else:
+                    unique[key] = 1
+
+        sorted_unique = {k: v for k, v in sorted(unique.items(), key=lambda item: item[1])}
+        print(sorted_unique)
+
+        position = self.MOUSE_CONTROLLER.position
+        self.MOUSE_CONTROLLER.position = self.CHEST
+        time.sleep(5)
+        self.MOUSE_CONTROLLER.position = position
