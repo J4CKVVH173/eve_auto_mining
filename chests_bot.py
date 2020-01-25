@@ -7,10 +7,10 @@ from pynput.mouse import Button as MButton, Controller as MController
 
 
 class Bot:
-    def __init__(self):
-        self.SCREEN = (1500, 1000, 1760, 1100)  # Место экрана которое будет обрабатываться
-        self.CHEST = (1617, 1048)  # Место где находится сундук
-        self.COLOR_FOR_FIND = np.array([0, 230, 203])  # цвет который будет искаться на месте обработки
+    def __init__(self, screen, chest, color):
+        self.SCREEN = screen  # Место экрана которое будет обрабатываться
+        self.CHEST = chest  # Место где находится сундук
+        self.COLOR_FOR_FIND = np.array(color)  # цвет который будет искаться на месте обработки
         self.MOUSE_CONTROLLER = MController()
 
     def bot_execute(self):
