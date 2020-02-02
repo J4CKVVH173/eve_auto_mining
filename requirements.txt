@@ -1,3 +1,4 @@
+daemon-process==0.9.2
 EasyProcess==0.2.8
 MouseInfo==0.1.2
 numpy==1.18.1
