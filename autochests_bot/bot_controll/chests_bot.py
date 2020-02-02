@@ -46,6 +46,31 @@ class Bot:
         unique = dict()
         for i in range(array.shape[0]):
             for j in range(array.shape[1]):
+                # ToDo when running on a monotonous surface (processing an area of the screen of the same color),
+                #  it throws an error
+                """Traceback (most recent call last):
+                File "/usr/lib64/python3.8/runpy.py", line 193, in _run_module_as_main
+                return _run_code(code, main_globals, None,
+                File "/usr/lib64/python3.8/runpy.py", line 86, in _run_code
+                exec(code, run_globals)
+                File "/home/andrey/projects/tes/env/lib/python3.8/site-packages/autochests_bot/__main__.py", line 11, in <module>
+                start_bot()
+                File "/home/andrey/projects/tes/env/lib/python3.8/site-packages/autochests_bot/start_bot.py", line 15, in start_bot
+                bot.debug()
+                File "/home/andrey/projects/tes/env/lib/python3.8/site-packages/autochests_bot/bot_controll/chests_bot.py", line 50, in debug
+                key = f"{array[i][j][0]},{array[i][j][1]},{array[i][j][2]}"
+                IndexError: invalid index to scalar variable"""
+                # Todo array print
+                """
+                [[0 1 1 ... 5 5 5]
+                [1 1 1 ... 5 5 5]
+                [4 1 1 ... 5 5 5]
+                ...
+                [5 5 5 ... 5 5 5]
+                [5 5 5 ... 5 5 5]
+                [5 5 5 ... 5 5 5]]
+                """
+                # Todo write error handling
                 key = f"{array[i][j][0]},{array[i][j][1]},{array[i][j][2]}"
                 if unique.get(key, None):
                     unique[key] += 1
