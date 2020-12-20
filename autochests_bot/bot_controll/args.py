@@ -11,7 +11,7 @@ parser.add_argument(
 
 parser.add_argument(
     '--screen',
-    default=(1500, 1000, 1760, 1100),
+    default=(1590, 1010, 1660, 1070),
     type=int,
     nargs='+',
     help='Координаты внутри которых будет обрабатываться изображение. Передавать через пробел x1 y1 x2 y2'

@@ -70,7 +70,7 @@ class Bot:
                 [5 5 5 ... 5 5 5]
                 [5 5 5 ... 5 5 5]]
                 """
-                # Todo write error handling
+                # ToDo write error handling
                 key = f"{array[i][j][0]},{array[i][j][1]},{array[i][j][2]}"
                 if unique.get(key, None):
                     unique[key] += 1

@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="twitch-chest-bot",
-    version="0.9.2",
+    version="0.9.3",
     author="J4CK VVH173",
     author_email="author@example.com",
     description="Twitch bot for auto collection of chests",
