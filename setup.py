@@ -18,7 +18,7 @@ setuptools.setup(
             'numpy==1.18.1',
             'pynput==1.6.6',
             'pyscreenshot==0.6',
-            'Pillow==7.0.0',
+            'Pillow==9.0.1',
         ],
     classifiers=[
         "Programming Language :: Python :: 3",
