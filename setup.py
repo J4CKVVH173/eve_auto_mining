@@ -15,7 +15,7 @@ setuptools.setup(
     packages=setuptools.find_packages(),
     install_requires=[
             'daemon-process',
-            'numpy==1.18.1',
+            'numpy==1.22.0',
             'pynput==1.6.6',
             'pyscreenshot==0.6',
             'Pillow==7.0.0',
